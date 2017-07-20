@@ -7,9 +7,11 @@ jobs:
     steps:
       - checkout
       - run: 
-          name: version
-          command:'npm --version'
-          command:'node --version'
+          name: npm version
+          command: npm --version
+      - run: 
+          name: node version
+          command:node --version
       - run:
           name: install-angular-cli
           command: 'npm install -g @angular/cli'
