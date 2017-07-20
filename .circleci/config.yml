@@ -11,7 +11,7 @@ jobs:
           command: 'sudo npm install -g @angular/cli'
       - run:
           name: npm install
-          command: npm insatall
+          command: npm install
       - run:
           name: building angular app
           command: ng build
