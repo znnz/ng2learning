@@ -11,7 +11,7 @@ jobs:
           command: npm --version
       - run: 
           name: node version
-          command:node --version
+          command: node --version
       - run:
           name: install-angular-cli
           command: 'npm install -g @angular/cli'
