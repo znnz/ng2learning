@@ -1,0 +1,32 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/ng2learning
+    docker:
+      - image: circleci/node:6.10.3-browsers
+    steps:
+      - checkout
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
+      - run:
+          name: install-angular-cli
+          command: npm install @angular/cli
+      - run:
+          name: building angular app
+          command: ng build
+      - run:
+          name: test
+          command: ng test
+      - run:
+          name: code-coverage
+          command: './node_modules/.bin/nyc report --reporter=text-lcov'
+      - store_artifacts:
+          path: test-results.xml
+          prefix: tests
+      - store_artifacts:
+          path: coverage
+          prefix: coverage
+      - store_test_results:
+          path: test-results.xml
+Contact GitHub API Training Shop Blog About
