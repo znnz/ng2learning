@@ -14,10 +14,14 @@ jobs:
           command: npm install --path devpro/
       - run:
           name: building angular app
-          command: ng build --path devpro/
+          command: |
+            cd devpro/
+            ng build
       - run:
           name: test
-          command: ng test --path devpro/
+          command: |
+            cd devpro/
+            ng test
       - run:
           name: code-coverage
           command: './node_modules/.bin/nyc report --reporter=text-lcov'
