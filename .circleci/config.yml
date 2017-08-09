@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/ng2learning/devpro
+    working_directory: ~/ng2learning
     docker:
       - image: circleci/node:6.10.3-browsers
     steps:
@@ -11,13 +11,13 @@ jobs:
           command: 'sudo npm install -g @angular/cli'
       - run:
           name: npm install
-          command: npm install
+          command: npm install --path devpro/
       - run:
           name: building angular app
-          command: ng build
+          command: ng build --path devpro/
       - run:
           name: test
-          command: ng test
+          command: ng test --path devpro/
       - run:
           name: code-coverage
           command: './node_modules/.bin/nyc report --reporter=text-lcov'
