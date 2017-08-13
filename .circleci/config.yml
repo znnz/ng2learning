@@ -20,7 +20,7 @@ jobs:
  
   test:
     machine:
-      enabled:true
+      enabled:  true
     working_directory: ~/ng2learning
     steps:
       - checkout
