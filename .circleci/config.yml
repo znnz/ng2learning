@@ -19,7 +19,9 @@ jobs:
             ng build
  
   test:
-    machine:true
+    machine:
+      enabled:true
+    working_directory: ~/ng2learning
     steps:
       - checkout
       - run:
