@@ -19,8 +19,7 @@ jobs:
             ng build
  
   test:
-    machine:
-      enabled:true
+    machine:true
     steps:
       - checkout
       - run:
